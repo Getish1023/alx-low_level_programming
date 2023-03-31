@@ -1,28 +1,46 @@
 #include "holberton.h"
 /**
- * rot13 - change letters to ROT13.
- * @s: analized string.
- *
- * Return: String with all letters in ROT13 base.
+ * print_number - print an int numbers.
+ * @n: number tested
+ * Return: Always 0.
  */
-char *rot13(char *s)
+void print_number(int n)
 {
-	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	int i = 0;
-	int j;
+	int i, j, digit, digits, power;
+	unsigned int temp, numchar, number;
 
-	while (*(s + i) != '\0')
+	digit = 0;
+	if (n < 0)
 	{
-		for (j = 0; j <= 51; j++)
-		{
-			if (*(s + i) == a[j])
-			{
-				*(s + i) = rot[j];
-				break;
-			}
-		}
+		_putchar('-');
+		temp = -n;
+	}
+	else
+	{
+		temp = n;
+	}
+
+	number = temp;
+
+	while (number >= 10)
+	{
+		number = number / 10;
+		digit++;
+	}
+	digits = digit + 1;
+	power = 1;
+	i = 1;
+
+	while (i < digits)
+	{
+		power = power * 10;
 		i++;
 	}
-	return (s);
-}}
+	j = power;
+	while (j >= 1)
+	{
+		numchar = (temp / j) % 10;
+		_putchar(numchar + '0');
+		j = j / 10;
+	}
+}
