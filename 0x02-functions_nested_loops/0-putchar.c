@@ -1,26 +1,18 @@
 #include "holberton.h"
-
 /**
-  * main - Entry point
-  *
-  * Return: Always 0
-  */
+ * main - prints the string "Holberton" from a character array.
+ * Return: 0 on success.
+ */
 int main(void)
 {
-	_putchar('H');
-	_putchar('o');
-	_putchar('l');
-	_putchar('b');
-	_putchar('e');
-	_putchar('r');
-	_putchar('t');
-	_putchar('o');
-	_putchar('n');
-	_putchar('\n');
+	char c[] = "Holberton";
+	int i;
 
+	for (i = 0; i < 9; i++)
+	{
+		_putchar(c[i]);
+	}
+	_putchar('\n');
 	return (0);
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
+
